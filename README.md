@@ -13,6 +13,41 @@ You can run your application in dev mode that enables live coding using:
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
 
+## Example Usage
+
+Once the service is up and running, you can use the following example to interact with the service.
+
+### POST /myDRD
+
+Run test DMN decision
+Given inputs:
+
+```json
+{}
+```
+
+Curl command (using the JSON object above):
+
+```sh
+curl -X 'POST' \
+  'http://localhost:8080/myDRD' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{}'
+ ```
+
+
+As response, decision information is returned
+
+Example response:
+
+```json
+{
+  "P1": 1,
+  "O": 10
+}
+```
+
 ## Packaging and running the application
 
 The application can be packaged using:
